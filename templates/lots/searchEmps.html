@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br><br><br><br>
+Search Employee:
+    <form name="form" method="get" action="{% url 'searchemp' %}">
+        <label for='emp_first'>Enter the first name:</label>
+        <input type="text" name='emp_first' id='emp_first'>
+        <br><br>
+        <label for='emp_last'>Enter the last name:</label>
+        <input type="text" name='emp_last' id='emp_last'>
+        <br><br>
+        <button type="submit">Search</button>
+    </form>
+
+
+{% endblock %}

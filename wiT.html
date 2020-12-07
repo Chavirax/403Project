@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //how to work with the dom
+        //event handler
+        //alert statement
+        //no vsc? go here: https://www.w3schools.com/html/tryit.asp?filename=tryhtml_basic
+    //name a function called clickMe
+    function clickMe()
+    {
+        //declare a variable
+        let third_paragraph = "I am the <i> third</i> paragraph";
+        //getElementById
+        document.getElementById("output1").innerHTML = "I am the <strong>first</strong> paragraph";
+        document.getElementById("output2").innerHTML = "I am the <i> second</i> paragraph";
+        document.getElementById("output3").innerHTML = third_paragraph;
+
+        //where to get playlist 
+        //https://www.youtube.com/watch?v=CRvYaapwTP4&list=PLOKmK92NydDFGCLiZELHKoek1F_yu9YWr&ab_channel=GregAnderson
+    }
+
+    //name a function called hoverMe
+    function hoverMe()
+    {   let  alertMessage = "Displying hoverMe function.";
+        //this an alert statement
+        alert(alertMessage);
+    }
+    function submitMe()
+    {
+        let text_box_input = document.getElementById("user_input").value;
+        alert("Welcome, " + text_box_input);
+    }
+    
+    </script>
+    
+    <!--clickMe()-->
+    <p id = "output1">the invisible 1st p tag contianer</p>
+    <p id ="output2"> the invisible 2nd p tag contianer</p>
+    <p id ="output3">the invisible 3rd p tag contianer</p>
+
+    <!--event handler, make buttons-->
+    <input type="button" value="click me"  onclick="clickMe()">
+    <input type="button" value="hover me"  onmouseover="hoverMe()"> <br>
+    <label for="user_input">Enter your name:</label>
+
+    <!--text field-->
+    <input type="text" id ="user_input">
+    <input type="button" value="submit" onclick="submitMe()"> <br>
+
+</body>
+
+</html>

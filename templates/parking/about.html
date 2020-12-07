@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<p>The parking fee to {{lot_name}} will be {{parking_cost}} </p>
+<h4>Places to park include: </h4> 
+<ul> 
+<h4> {% for sName in places_to_park %} </h4>
+<li>{{ sName }}</li> 
+{% endfor %}    
+</ul>     
+
+
+
+{% endblock %}                 
+

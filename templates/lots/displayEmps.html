@@ -1,0 +1,24 @@
+ {% extends 'base.html' %}
+        {% load static %}
+        {% block content %}
+        <br>   <br>   <br>   <br>   <br>
+            <div class="container">
+                {% for emp in our_emps %}
+                <p>
+                    {% if emp.emp_title != None %}
+                        {{ emp.emp_title }}
+                    {% endif %}
+                    {{ emp.emp_first }}
+                    {{ emp.emp_last }},
+                    {{ emp.emp_state }},
+                    {{ emp.contact_information }}
+                    {% for jobs in emp.skill_level_set.all %}
+                        <br>
+                        {{ jobs.skill.description }}  
+                        {{ jobs.skill_rating}}       
+                    {% endfor %}
+                {% endfor %} 
+                </p>
+            </div>
+        {% endblock %}               
+        

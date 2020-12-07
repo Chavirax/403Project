@@ -1,0 +1,68 @@
+ {% extends 'base.html' %}
+            {% load static %}
+            {% block content %}
+            <br>     <br>     <br>     <br>     <br>
+   Add Employee:
+            
+                <form name="form" method="post" action="{% url 'storeemp' %}">
+                    {% csrf_token %}
+                    <label for='emp_first'>Enter the first name:</label>
+                    <input type="text" name='emp_first' id='emp_first'>
+                    <br><br>
+                    <label for='emp_last'>Enter the last name:</label>
+                    <input type="text" name='emp_last' id='emp_last'> 
+                    <br><br>     
+                    <label for='emp_title'>Enter the title:</label>
+                    <select name="emp_title">
+                        {% for emptitle, empdesc in titles %}
+                            <option value="{{ emptitle }}">{{ empdesc }}</option>
+                        {% endfor %} </select>
+                    <br><br>
+                    <label for='emp_state'>Select the state:</label>
+                    <select name="emp_state">
+                    {% for state_info in states %}
+                        <option value="{{ state_info.state_abbrev }}">{{ state_info.state_description }}</option>
+                    {% endfor %} </select>
+                    <br><br>     
+                    <label for='contact_info'>Enter the contact information:</label>
+                    <input type="text" name='contact_info' id='contact_info'> 
+                    <br><br>                        
+                    <button type="submit">Add</button>
+                    </form>
+<br> <br> 
+<br> <br> 
+
+Update Employee:
+ <form name="form" method="get" action="{% url 'update' %}">
+        <label for='first_name'>Enter the first name:</label>
+        <input type="text" name='emp_first' id='first_name'>
+        <br><br>
+        <label for='last_name'>Enter the last name:</label>
+        <input type="text" name='emp_last' id='last_name'>
+
+        <br><br>
+        <label for='new_last_name'>Enter the new last name:</label>
+        <input type="text" name='new_last_name' id='new_last_name'>
+        
+        
+        <button type="submit">Update</button>
+       
+    </form>
+     
+<br> <br> 
+<br> <br> 
+Delete Employee:
+
+     <form name="form" method="get" action="{% url 'delete' %}">
+        <label for='emp_first'>Enter the first name:</label>
+        <input type="text" name='emp_first' id='emp_first'>
+        <br><br>
+        <label for='emp_last'>Enter the last name:</label>
+        <input type="text" name='emp_last' id='emp_last'>
+        <br><br>
+        <button type="submit">Delete</button>
+       
+    </form>
+
+
+            {% endblock %}  
